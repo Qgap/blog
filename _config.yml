@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -46,6 +46,10 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
+            iOS逆向:iOSRe
+            iOS经验积累:iOSDev
+            life  :life
+
 tag_map:
 
 # Date / Time format
@@ -63,7 +67,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: spfk
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -71,7 +75,7 @@ deploy:
   type: git
   repo: https://github.com/Qgap/qgap.github-io.git
   branch: gh-pages
-  message: init hexo
+  message: update blog
   name: Qgap
   email: 392891804@qq.com
  
