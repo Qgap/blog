@@ -5,34 +5,16 @@
   
   <title>iOSRe(tweak) | Gap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
-1.$THEOS/bin/nic.pl          
-
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activ">
+  <meta name="description" content="&amp;#x521B;&amp;#x5EFA;tweak &amp;#x6587;&amp;#x4EF6;&amp;#x867D;&amp;#x7136;&amp;#x8FD9;&amp;#x4E2A;&amp;#x6B65;&amp;#x9AA4;&amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x6211;&amp;#x5B9E;&amp;#x8DF5;&amp;#x8FC7;&amp;#x5F88;&amp;#x591A;&amp;#x904D;&amp;#xFF0C;&amp;#x4F46;&amp;#x8FD8;&amp;#x662F;&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOSRe(tweak)">
 <meta property="og:url" content="https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/index.html">
 <meta property="og:site_name" content="Gap">
-<meta property="og:description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
-1.$THEOS/bin/nic.pl          
-
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activ">
+<meta property="og:description" content="&amp;#x521B;&amp;#x5EFA;tweak &amp;#x6587;&amp;#x4EF6;&amp;#x867D;&amp;#x7136;&amp;#x8FD9;&amp;#x4E2A;&amp;#x6B65;&amp;#x9AA4;&amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x6211;&amp;#x5B9E;&amp;#x8DF5;&amp;#x8FC7;&amp;#x5F88;&amp;#x591A;&amp;#x904D;&amp;#xFF0C;&amp;#x4F46;&amp;#x8FD8;&amp;#x662F;&amp;#">
 <meta property="og:updated_time" content="2016-06-13T07:55:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOSRe(tweak)">
-<meta name="twitter:description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
-1.$THEOS/bin/nic.pl          
-
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activ">
+<meta name="twitter:description" content="&amp;#x521B;&amp;#x5EFA;tweak &amp;#x6587;&amp;#x4EF6;&amp;#x867D;&amp;#x7136;&amp;#x8FD9;&amp;#x4E2A;&amp;#x6B65;&amp;#x9AA4;&amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x6211;&amp;#x5B9E;&amp;#x8DF5;&amp;#x8FC7;&amp;#x5F88;&amp;#x591A;&amp;#x904D;&amp;#xFF0C;&amp;#x4F46;&amp;#x8FD8;&amp;#x662F;&amp;#">
   
     <link rel="alternative" href="/atom.xml" title="Gap" type="application/atom+xml">
   
@@ -239,7 +221,7 @@ NIC 2.0 - New Instance Creator
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>创建tweak 文件<br>虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  </p>
+        <p>&#x521B;&#x5EFA;tweak &#x6587;&#x4EF6;<br>&#x867D;&#x7136;&#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x5DF2;&#x7ECF;&#x88AB;&#x6211;&#x5B9E;&#x8DF5;&#x8FC7;&#x5F88;&#x591A;&#x904D;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x4E0D;&#x514D;&#x4F1A;&#x5FD8;&#x8BB0;&#xFF0C;&#x6BD5;&#x7ADF;&#x597D;&#x8BB0;&#x6027;&#x4E0D;&#x5982;&#x70C2;&#x7B14;&#x5934;&#x3002;  </p>
 <pre><code>1.$THEOS/bin/nic.pl          
 
 Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
@@ -265,10 +247,10 @@ Author/Maintainer Name [Mac]: Mac
 [iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]: SpringBoard
 Instantiating iphone/tweak in gap/...
 Done.
-</code></pre><p> 这时，会在你执行<code>$THEOS/bin/nic.pl</code> 命令下的目录中生成一个gap 的文件夹，文件中包括<code>control</code>,<br> <code>gap.plist</code>(如果是App，则为app 的<code>bundle id</code>,即第一步输入的<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,这里，需要在第一行添加<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,重头戏，这里写你需要<code>%hook</code>的方法。</p>
+</code></pre><p> &#x8FD9;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;&#x4F60;&#x6267;&#x884C;<code>$THEOS/bin/nic.pl</code> &#x547D;&#x4EE4;&#x4E0B;&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#x751F;&#x6210;&#x4E00;&#x4E2A;gap &#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6587;&#x4EF6;&#x4E2D;&#x5305;&#x62EC;<code>control</code>,<br> <code>gap.plist</code>(&#x5982;&#x679C;&#x662F;App&#xFF0C;&#x5219;&#x4E3A;app &#x7684;<code>bundle id</code>,&#x5373;&#x7B2C;&#x4E00;&#x6B65;&#x8F93;&#x5165;&#x7684;<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,&#x8FD9;&#x91CC;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x7B2C;&#x4E00;&#x884C;&#x6DFB;&#x52A0;<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,&#x91CD;&#x5934;&#x620F;&#xFF0C;&#x8FD9;&#x91CC;&#x5199;&#x4F60;&#x9700;&#x8981;<code>%hook</code>&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <h2 id="Making-Project"><a href="#Making-Project" class="headerlink" title="Making Project"></a>Making Project</h2><pre><code>make package
 make install
-</code></pre><p>改完配置， 编写完代码。打开terminal，切换到<code>gap</code> 文件夹，执行<code>make package</code>,如果一切 正常，会生成一个<code>debs</code>的文件夹，里面有个<code>.deb</code>的文件（然而，更多情况是有错误。例如，有时可能报告<code>include $(THEOS)/makefiles/common.mk</code>这句， 找不到<code>common.mk</code>文件，这里可以将<code>$(THEOS)</code>换成<code>/opt/theos</code>）。<br>成功编译生成<code>deb</code> 文件后，执行<code>make install</code>，这里会要求输入iPhone ssh password，然后会重启，(重启是因为在    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &#39;-&#39; for none) [SpringBoard]</code>这步键入了一个<code>SpringBoard</code>,选择iphone 安装tweak 后的操作)。</p>
+</code></pre><p>&#x6539;&#x5B8C;&#x914D;&#x7F6E;&#xFF0C; &#x7F16;&#x5199;&#x5B8C;&#x4EE3;&#x7801;&#x3002;&#x6253;&#x5F00;terminal&#xFF0C;&#x5207;&#x6362;&#x5230;<code>gap</code> &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6267;&#x884C;<code>make package</code>,&#x5982;&#x679C;&#x4E00;&#x5207; &#x6B63;&#x5E38;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>debs</code>&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x4E2A;<code>.deb</code>&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x7136;&#x800C;&#xFF0C;&#x66F4;&#x591A;&#x60C5;&#x51B5;&#x662F;&#x6709;&#x9519;&#x8BEF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6709;&#x65F6;&#x53EF;&#x80FD;&#x62A5;&#x544A;<code>include $(THEOS)/makefiles/common.mk</code>&#x8FD9;&#x53E5;&#xFF0C; &#x627E;&#x4E0D;&#x5230;<code>common.mk</code>&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5C06;<code>$(THEOS)</code>&#x6362;&#x6210;<code>/opt/theos</code>&#xFF09;&#x3002;<br>&#x6210;&#x529F;&#x7F16;&#x8BD1;&#x751F;&#x6210;<code>deb</code> &#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x6267;&#x884C;<code>make install</code>&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x8981;&#x6C42;&#x8F93;&#x5165;iPhone ssh password&#xFF0C;&#x7136;&#x540E;&#x4F1A;&#x91CD;&#x542F;&#xFF0C;(&#x91CD;&#x542F;&#x662F;&#x56E0;&#x4E3A;&#x5728;    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]</code>&#x8FD9;&#x6B65;&#x952E;&#x5165;&#x4E86;&#x4E00;&#x4E2A;<code>SpringBoard</code>,&#x9009;&#x62E9;iphone &#x5B89;&#x88C5;tweak &#x540E;&#x7684;&#x64CD;&#x4F5C;)&#x3002;</p>
 
       
     </div>
@@ -399,7 +381,7 @@ make install
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/14/随谈/">随谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/tweak/">iOSRe(tweak)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/05/iOSRe/">iOSRe (二) 配置THEOS环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/bookList/">2016 book list</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/01/我的第一篇博客/">HELLO WORLD</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/14/随谈/">随谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/tweak/">iOSRe(tweak)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/05/iOSRe/">iOSRe (二) 配置THEOS环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/class-dump/">砸壳与 class dump</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/bookList/">2016 book list</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/11/01/我的第一篇博客/">HELLO WORLD</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
