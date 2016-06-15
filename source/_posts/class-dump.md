@@ -34,10 +34,10 @@ date: 2016-05-04 16:55:53
 
 ---
 1.如果你手机越狱成功，打开ifunbox，连接手机，会显示你的手机系统和手机上的应用程序。
-![](/Users/mac/Documents/blog/source/_posts/ifunbox.png)        
+![](/images/ifunbox.png)        
 
 
-2.双击右侧出现的，你想砸壳的app ，会有Documents 文件夹，将mac 端上的`dumpdecrypted.dylib` 拖拽到Documents文件夹中。![wechat](/Users/mac/Documents/blog/source/_posts/wechatfile.png)
+2.双击右侧出现的，你想砸壳的app ，会有Documents 文件夹，将mac 端上的`dumpdecrypted.dylib` 拖拽到Documents文件夹中。![wechat](/images/wechatfile.png)
 
 3.打开terminal，通过ssh 连上你的手机     
 
