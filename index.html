@@ -218,7 +218,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>2016-06-14<br>&#x6B64;&#x6587;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x7684;&#x611F;&#x60F3;&#x3002;<br>&#x4ECA;&#x5E74;&#x4EBA;&#x90FD;&#x53D8;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x5F88;&#x5C11;&#x5728;&#x670B;&#x53CB;&#x5708;&#x548C;QQ&#x7A7A;&#x95F4;&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x3002;&#x66F4;&#x591A;&#x7684;&#x60F3;&#x6CD5;&#x90FD;&#x662F;&#x88AB;&#x81EA;&#x6211;&#x6D88;&#x5316;&#x7136;&#x540E;&#x6DE1;&#x5FD8;&#x3002;<br>&#x73B0;&#x5728;&#x9759;&#x4E0B;&#x6765;&#x60F3;&#x60F3;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x5462;&#xFF1F;&#x4EE5;&#x524D;&#x6709;&#x4EC0;&#x4E48;&#x90FD;&#x559C;&#x6B22;&#x5199;&#x65E5;&#x5FD7;&#xFF0C;&#x73B0;&#x5728;&#x90FD;&#x5C11;&#x4E86;&#xFF0C;&#x4E0D;&#x662F;&#x611F;&#x60F3;&#x5C11;&#x4E86;&#xFF0C;<br>&#x800C;&#x662F;&#x592A;&#x5728;&#x610F;&#x522B;&#x4EBA;&#x7684;&#x8BF4;&#x6CD5;&#x4E86;&#x3002;&#x4F3C;&#x4E4E;&#x8FD9;&#x79CD;&#x60F3;&#x6CD5;&#x5F88;&#x50BB;&#xFF0C;&#x662F;&#x554A;&#xFF0C;&#x90A3;&#x5C31;&#x6539;&#x3002;<br>&#x52AA;&#x529B;&#x505A;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x81EA;&#x5DF1;&#x3002;</p>
+        <p>2016-06-14<br>此文用来记录自己的感想。<br>今年人都变了很多，很少在朋友圈和QQ空间更新状态。更多的想法都是被自我消化然后淡忘。<br>现在静下来想想，为什么不记录下来呢？以前有什么都喜欢写日志，现在都少了，不是感想少了，<br>而是太在意别人的说法了。似乎这种想法很傻，是啊，那就改。<br>努力做个更好的自己。</p>
 
       
     </div>
@@ -272,7 +272,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>&#x521B;&#x5EFA;tweak &#x6587;&#x4EF6;<br>&#x867D;&#x7136;&#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x5DF2;&#x7ECF;&#x88AB;&#x6211;&#x5B9E;&#x8DF5;&#x8FC7;&#x5F88;&#x591A;&#x904D;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x4E0D;&#x514D;&#x4F1A;&#x5FD8;&#x8BB0;&#xFF0C;&#x6BD5;&#x7ADF;&#x597D;&#x8BB0;&#x6027;&#x4E0D;&#x5982;&#x70C2;&#x7B14;&#x5934;&#x3002;  </p>
+        <p>创建tweak 文件<br>虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  </p>
 <pre><code>1.$THEOS/bin/nic.pl          
 
 Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
@@ -298,10 +298,10 @@ Author/Maintainer Name [Mac]: Mac
 [iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]: SpringBoard
 Instantiating iphone/tweak in gap/...
 Done.
-</code></pre><p> &#x8FD9;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;&#x4F60;&#x6267;&#x884C;<code>$THEOS/bin/nic.pl</code> &#x547D;&#x4EE4;&#x4E0B;&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#x751F;&#x6210;&#x4E00;&#x4E2A;gap &#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6587;&#x4EF6;&#x4E2D;&#x5305;&#x62EC;<code>control</code>,<br> <code>gap.plist</code>(&#x5982;&#x679C;&#x662F;App&#xFF0C;&#x5219;&#x4E3A;app &#x7684;<code>bundle id</code>,&#x5373;&#x7B2C;&#x4E00;&#x6B65;&#x8F93;&#x5165;&#x7684;<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,&#x8FD9;&#x91CC;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x7B2C;&#x4E00;&#x884C;&#x6DFB;&#x52A0;<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,&#x91CD;&#x5934;&#x620F;&#xFF0C;&#x8FD9;&#x91CC;&#x5199;&#x4F60;&#x9700;&#x8981;<code>%hook</code>&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+</code></pre><p> 这时，会在你执行<code>$THEOS/bin/nic.pl</code> 命令下的目录中生成一个gap 的文件夹，文件中包括<code>control</code>,<br> <code>gap.plist</code>(如果是App，则为app 的<code>bundle id</code>,即第一步输入的<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,这里，需要在第一行添加<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,重头戏，这里写你需要<code>%hook</code>的方法。</p>
 <h2 id="Making-Project"><a href="#Making-Project" class="headerlink" title="Making Project"></a>Making Project</h2><pre><code>make package
 make install
-</code></pre><p>&#x6539;&#x5B8C;&#x914D;&#x7F6E;&#xFF0C; &#x7F16;&#x5199;&#x5B8C;&#x4EE3;&#x7801;&#x3002;&#x6253;&#x5F00;terminal&#xFF0C;&#x5207;&#x6362;&#x5230;<code>gap</code> &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6267;&#x884C;<code>make package</code>,&#x5982;&#x679C;&#x4E00;&#x5207; &#x6B63;&#x5E38;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>debs</code>&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x4E2A;<code>.deb</code>&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x7136;&#x800C;&#xFF0C;&#x66F4;&#x591A;&#x60C5;&#x51B5;&#x662F;&#x6709;&#x9519;&#x8BEF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6709;&#x65F6;&#x53EF;&#x80FD;&#x62A5;&#x544A;<code>include $(THEOS)/makefiles/common.mk</code>&#x8FD9;&#x53E5;&#xFF0C; &#x627E;&#x4E0D;&#x5230;<code>common.mk</code>&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5C06;<code>$(THEOS)</code>&#x6362;&#x6210;<code>/opt/theos</code>&#xFF09;&#x3002;<br>&#x6210;&#x529F;&#x7F16;&#x8BD1;&#x751F;&#x6210;<code>deb</code> &#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x6267;&#x884C;<code>make install</code>&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x8981;&#x6C42;&#x8F93;&#x5165;iPhone ssh password&#xFF0C;&#x7136;&#x540E;&#x4F1A;&#x91CD;&#x542F;&#xFF0C;(&#x91CD;&#x542F;&#x662F;&#x56E0;&#x4E3A;&#x5728;    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]</code>&#x8FD9;&#x6B65;&#x952E;&#x5165;&#x4E86;&#x4E00;&#x4E2A;<code>SpringBoard</code>,&#x9009;&#x62E9;iphone &#x5B89;&#x88C5;tweak &#x540E;&#x7684;&#x64CD;&#x4F5C;)&#x3002;</p>
+</code></pre><p>改完配置， 编写完代码。打开terminal，切换到<code>gap</code> 文件夹，执行<code>make package</code>,如果一切 正常，会生成一个<code>debs</code>的文件夹，里面有个<code>.deb</code>的文件（然而，更多情况是有错误。例如，有时可能报告<code>include $(THEOS)/makefiles/common.mk</code>这句， 找不到<code>common.mk</code>文件，这里可以将<code>$(THEOS)</code>换成<code>/opt/theos</code>）。<br>成功编译生成<code>deb</code> 文件后，执行<code>make install</code>，这里会要求输入iPhone ssh password，然后会重启，(重启是因为在    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &#39;-&#39; for none) [SpringBoard]</code>这步键入了一个<code>SpringBoard</code>,选择iphone 安装tweak 后的操作)。</p>
 
       
     </div>
@@ -355,23 +355,23 @@ make install
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>&#x57FA;&#x672C;&#x914D;&#x7F6E;</p>
-<p>#####1.&#x6307;&#x5B9A;THEOS &#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#xFF0C;<br>      export THEOS=/opt/theos   </p>
-<p>#####2.&#x4ECE;Github &#x4E0A;&#x4E0B;&#x8F7D;Theos&#x3002;<br>      Gapyear:~ gap$ sudo git clone &#x2013;recursive git://github.com/DHowett/theos.git $THEOS</p>
-<p>#####3.&#x914D;&#x7F6E;ldid&#xFF0C;&#x4ECE; <a href="http://joedj.net/ldid" target="_blank" rel="external">http://joedj.net/ldid</a> &#x4E0B;&#x8F7D;ldid , &#x7136;&#x540E;&#x79FB;&#x81F3;&#x201C;/opt/theos/bin&#x201D; &#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8D4B;&#x4E88;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#xFF1A;   </p>
+        <p>基本配置</p>
+<p>#####1.指定THEOS 的安装路径，<br>      export THEOS=/opt/theos   </p>
+<p>#####2.从Github 上下载Theos。<br>      Gapyear:~ gap$ sudo git clone –recursive git://github.com/DHowett/theos.git $THEOS</p>
+<p>#####3.配置ldid，从 <a href="http://joedj.net/ldid" target="_blank" rel="external">http://joedj.net/ldid</a> 下载ldid , 然后移至“/opt/theos/bin” 下，然后以下命令赋予可执行权限：   </p>
 <pre><code>- Gapyear:~ gap$ sudo mv Downloads/ldid /opt/theos/bin/   
 - Gapyear:~ gap$ sudo chmod 777 /opt/theos/bin/ldid 
-</code></pre><p>#####4.&#x914D;&#x7F6E;CydiaSubstrate</p>
+</code></pre><p>#####4.配置CydiaSubstrate</p>
 <ul>
-<li>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x8D8A;&#x72F1;&#x540E;&#x7684;&#x624B;&#x673A;&#xFF0C;&#x8FDE;&#x4E0A;Mac &#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x6253;&#x5F00;iFunBox,&#x5C06; &#x201C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0B;&#x7684; <code>/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate</code>&#x201C; &#x62F7;&#x8D1D;&#x5230;OSX &#x4E2D;&#xFF0C;</li>
-<li>&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x91CD;&#x547D;&#x540D;&#x4E3A;<code>libsubstrate.dylib</code> &#x540E;&#x653E;&#x5230;&#x201D;<code>/opt/theos/lib/</code>&#x201C; &#x4E2D;&#x3002;     </li>
+<li>最简单的方法，将越狱后的手机，连上Mac ，然后使用打开iFunBox,将 “文件系统下的 <code>/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate</code>“ 拷贝到OSX 中，</li>
+<li>并且将其重命名为<code>libsubstrate.dylib</code> 后放到”<code>/opt/theos/lib/</code>“ 中。     </li>
 </ul>
-<p>#####5. &#x914D;&#x7F6E;<code>dpkg&#xFF0D;deb</code> &#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x82B1;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x914D;&#x7F6E;&#x7684;&#x4E00;&#x6B65;&#x3002;&#x5148;&#x4ECE; <a href="https://github.com/DHowett/dm.pl">github download dm.pl &#x6587;&#x4EF6;</a> ,&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x91CC;&#x9762;&#x7684; <code>dm.pl</code> &#x91CD;&#x65B0;&#x547D;&#x540D;&#x4E3A; <code>dpkg-deb</code> &#xFF0C; &#x8FD9;&#x91CC;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;OS X &#x4E2D;&#x9ED8;&#x8BA4;&#x7684;&#x9690;&#x85CF;&#x4E86;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x91CC;&#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;&#x6269;&#x5C55;&#x5C5E;&#x6027;&#xFF0C;&#x662F;&#x6587;&#x4EF6;&#x540D;&#x5168;&#x90E8;&#x66FF;&#x6362;&#xFF0C;&#x5305;&#x62EC;&#x6269;&#x5C55;&#x540E;&#x7F00;&#x3002;  &#x540C;&#x6837;&#xFF0C;&#x5C06;<code>dpkg-deb</code> &#x653E;&#x5230;<code>/opt/theos/bin</code> &#x76EE;&#x5F55;&#x4E0B;   </p>
+<p>#####5. 配置<code>dpkg－deb</code> ，这是我花最长时间配置的一步。先从 <a href="https://github.com/DHowett/dm.pl">github download dm.pl 文件</a> ,然后将这里面的 <code>dm.pl</code> 重新命名为 <code>dpkg-deb</code> ， 这里，一定要记住，OS X 中默认的隐藏了文件的扩展属性，这里一定要注意扩展属性，是文件名全部替换，包括扩展后缀。  同样，将<code>dpkg-deb</code> 放到<code>/opt/theos/bin</code> 目录下   </p>
 <pre><code>- Gapyear:~ gap$ sudo mv Downloads/dm.pl-master/dpkg-deb /opt/theos/bin/
 
 - Gapyear:~ gap$ sudo chmod 777 /opt/theos/bin/dpkg-deb 
 </code></pre><hr>
-<p>&#x4EE5;&#x4E0A;&#x662F;&#x914D;&#x7F6E;<code>THEOS</code> &#x8FC7;&#x7A0B;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x53C2;&#x8003;&#x8D44;&#x6599;</p>
+<p>以上是配置<code>THEOS</code> 过程，以下是参考资料</p>
 <p><a href="http://iphonedevwiki.net/index.php/Theos/Getting_Started#Setting_Up_Dependencies" target="_blank" rel="external">Theos/Getting_Started#Setting_Up_Dependencies</a></p>
 <p><a href="http://bbs.iosre.com/t/dpkg-deb/3321" target="_blank" rel="external">dpkg-bed Q</a></p>
 
@@ -511,7 +511,7 @@ $make
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>&#x8BB0;&#x5F55;&#x770B;&#x8FC7;&#x7684;&#x4E66;&#xFF0C;&#x5B9A;&#x671F;&#x56DE;&#x987E;<br>&#x300A;&#x521B;&#x4E1A;&#x7EF4;&#x8270;&#x300B;<br>&#x300A;The one thing&#x300B;&#xFF0D;&#x300A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x53EA;&#x6709;&#x4E00;&#x4EF6;&#x300B;<br>&#x300A;&#x683C;&#x9C81;&#x592B;&#x7ED9;&#x7ECF;&#x7406;&#x4EBA;&#x7684;&#x7B2C;&#x4E00;&#x8BFE;&#x300B;<br>&#x300A;&#x9AD8;&#x6548;&#x7A0B;&#x5E8F;&#x5458;&#x7684;45&#x4E2A;&#x4E60;&#x60EF;&#xFF1A;&#x654F;&#x6377;&#x5F00;&#x53D1;&#x4FEE;&#x70BC;&#x4E4B;&#x9053;&#x300B;<br>&#x300A;&#x4EBA;&#x4EBA;&#x90FD;&#x662F;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;&#x300B; &#xFF08;&#x82CF;&#x6770;&#xFF09;<br>&#x300A;20&#x5C81;&#xFF0C;&#x5149;&#x9634;&#x4E0D;&#x518D;&#x6765;&#x300B;<br>&#x300A;&#x5C11;&#x6709;&#x4EBA;&#x8D70;&#x7684;&#x8DEF;&#x4E09;&#x300B;<br>&#x300A;&#x53D1;&#x73B0;&#x4F60;&#x7684;&#x4F18;&#x52BF;2.0&#x300B;</p>
+        <p>记录看过的书，定期回顾<br>《创业维艰》<br>《The one thing》－《最重要的事只有一件》<br>《格鲁夫给经理人的第一课》<br>《高效程序员的45个习惯：敏捷开发修炼之道》<br>《人人都是产品经理》 （苏杰）<br>《20岁，光阴不再来》<br>《少有人走的路三》<br>《发现你的优势2.0》</p>
 
       
     </div>
@@ -565,8 +565,8 @@ $make
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>&#x6709;&#x7684;&#x4EBA;&#x4E8C;&#x5341;&#x5C81;&#x5C31;&#x6B7B;&#x4E86;&#xFF0C;&#x76F4;&#x5230;&#x516B;&#x5341;&#x5C81;&#x624D;&#x57CB;&#x3002;   </p>
-<p>&#x6211;&#x662F;&#x9AD8;&#x9752;&#xFF0C;&#x6211;&#x4E3A;&#x81EA;&#x5DF1;&#x4EE3;&#x8A00;&#x3002;</p>
+        <p>有的人二十岁就死了，直到八十岁才埋。   </p>
+<p>我是高青，我为自己代言。</p>
 
       
     </div>
