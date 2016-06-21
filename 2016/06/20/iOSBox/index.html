@@ -3,36 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>iOSRe(tweak) | Gap</title>
+  <title>iOS 开发中遇到的问题及解决方法。 | Gap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
-1.$THEOS/bin/nic.pl          
+  <meta name="description" content="上周看完《程序员45个习惯》，中间有那么一条，是记录开发日志，所以本文主要是记录总结 自己在iOS 开发中遇到的问题和解决方法。方便日后查看
 
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activ">
+
+ NSString 去掉 NSString中的空格和换行，stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] 但是这只能去掉头部和尾部的空格">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOSRe(tweak)">
-<meta property="og:url" content="https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/index.html">
+<meta property="og:title" content="iOS 开发中遇到的问题及解决方法。">
+<meta property="og:url" content="https://github.com/Qgap/qgap.github-io/2016/06/20/iOSBox/index.html">
 <meta property="og:site_name" content="Gap">
-<meta property="og:description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
-1.$THEOS/bin/nic.pl          
+<meta property="og:description" content="上周看完《程序员45个习惯》，中间有那么一条，是记录开发日志，所以本文主要是记录总结 自己在iOS 开发中遇到的问题和解决方法。方便日后查看
 
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activ">
-<meta property="og:updated_time" content="2016-06-13T07:55:04.000Z">
+
+ NSString 去掉 NSString中的空格和换行，stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] 但是这只能去掉头部和尾部的空格">
+<meta property="og:updated_time" content="2016-06-21T03:13:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOSRe(tweak)">
-<meta name="twitter:description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
-1.$THEOS/bin/nic.pl          
+<meta name="twitter:title" content="iOS 开发中遇到的问题及解决方法。">
+<meta name="twitter:description" content="上周看完《程序员45个习惯》，中间有那么一条，是记录开发日志，所以本文主要是记录总结 自己在iOS 开发中遇到的问题和解决方法。方便日后查看
 
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activ">
+
+ NSString 去掉 NSString中的空格和换行，stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] 但是这只能去掉头部和尾部的空格">
   
     <link rel="alternative" href="/atom.xml" title="Gap" type="application/atom+xml">
   
@@ -205,11 +196,11 @@ NIC 2.0 - New Instance Creator
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-tweak" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-iOSBox" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/06/tweak/" class="article-date">
-      <time datetime="2016-05-06T12:49:58.000Z" itemprop="datePublished">2016-05-06</time>
+      <a href="/2016/06/20/iOSBox/" class="article-date">
+      <time datetime="2016-06-20T15:10:17.000Z" itemprop="datePublished">2016-06-20</time>
 </a>
     </div>
   
@@ -222,7 +213,7 @@ NIC 2.0 - New Instance Creator
         
   
     <h1 class="article-title" itemprop="name">
-      iOSRe(tweak)
+      iOS 开发中遇到的问题及解决方法。
     </h1>
   
 
@@ -239,36 +230,29 @@ NIC 2.0 - New Instance Creator
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>创建tweak 文件<br>虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  </p>
-<pre><code>1.$THEOS/bin/nic.pl          
+        <blockquote>
+<p>上周看完《程序员45个习惯》，中间有那么一条，是记录开发日志，所以本文主要是记录总结 自己在iOS 开发中遇到的问题和解决方法。方便日后查看</p>
+</blockquote>
+<hr>
+<p> <code>NSString</code><br> 去掉 <code>NSString</code>中的空格和换行，<code>stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]</code> 但是这只能去掉头部和尾部的空格和换行符，中间的没法去掉。   </p>
+<p>如果去掉两端的空格和换行后，需要将中间的去掉，结合下面的方法。</p>
+<pre><code>NSArray *components = [string  componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
-Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
-NIC 2.0 - New Instance Creator
- ------------------------------
-[1.] iphone/activator_event
-[2.] iphone/application_modern
-[3.] iphone/cydget
-[4.] iphone/flipswitch_switch
-[5.] iphone/framework
-[6.] iphone/ios7_notification_center_widget
-[7.] iphone/library
-[8.] iphone/notification_center_widget
-[9.] iphone/preference_bundle_modern
-[10.] iphone/tool
-[11.] iphone/tweak
-[12.] iphone/xpc_service
-Choose a Template (required): 11
-Project Name (required): gap
-Package Name [com.yourcompany.gap]: com.gapyear.gap
-Author/Maintainer Name [Mac]: Mac
-[iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]: com.apple.springboard
-[iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]: SpringBoard
-Instantiating iphone/tweak in gap/...
-Done.
-</code></pre><p> 这时，会在你执行<code>$THEOS/bin/nic.pl</code> 命令下的目录中生成一个gap 的文件夹，文件中包括<code>control</code>,<br> <code>gap.plist</code>(如果是App，则为app 的<code>bundle id</code>,即第一步输入的<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,这里，需要在第一行添加<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,重头戏，这里写你需要<code>%hook</code>的方法。</p>
-<h2 id="Making-Project"><a href="#Making-Project" class="headerlink" title="Making Project"></a>Making Project</h2><pre><code>make package
-make install
-</code></pre><p>改完配置， 编写完代码。打开terminal，切换到<code>gap</code> 文件夹，执行<code>make package</code>,如果一切 正常，会生成一个<code>debs</code>的文件夹，里面有个<code>.deb</code>的文件（然而，更多情况是有错误。例如，有时可能报告<code>include $(THEOS)/makefiles/common.mk</code>这句， 找不到<code>common.mk</code>文件，这里可以将<code>$(THEOS)</code>换成<code>/opt/theos</code>）。<br>成功编译生成<code>deb</code> 文件后，执行<code>make install</code>，这里会要求输入iPhone ssh password，然后会重启，(重启是因为在    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &#39;-&#39; for none) [SpringBoard]</code>这步键入了一个<code>SpringBoard</code>,选择iphone 安装tweak 后的操作)。</p>
+string = [components componentsJoinedByString:@&quot;&quot;];
+</code></pre><p> 参考<a href="http://nshipster.cn/nscharacterset/" target="_blank" rel="external">nshipster NSCharacter​Set</a></p>
+<p>  替换<code>NSString</code> 中指定的字符，    </p>
+<pre><code>[string stringByReplacingOccurrencesOfString:@&quot;-&quot; withString:@&quot;&quot;];
+</code></pre><hr>
+<p> <code>NSNotificationCenter</code></p>
+<p> <code>NSNotificationCenter</code>  使用顺序，<code>addObserver</code>在先， 而后<code>postNotificationName</code> ；<br> 可能crash 的原因，   </p>
+<ol>
+<li>使用后没有<code>removeObserver</code>，在升级<code>xcode 7.3</code>后遇到过，从而导致crash；   </li>
+<li><code>post</code>操作的线程和<code>addObserver</code>的线程不一致而引发的。<a href="http://southpeak.github.io/blog/2015/03/14/nsnotificationyu-duo-xian-cheng/" target="_blank" rel="external">南峰子博客 Notification与多线程</a>；  </li>
+</ol>
+<pre><code>dispatch_async(dispatch_get_main_queue(), ^{
+      [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidCompleteNotification object:task userInfo:userInfo];
+  });
+</code></pre><hr>
 
       
     </div>
@@ -277,12 +261,12 @@ make install
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/06/tweak/">iOSRe(tweak)</a></p>
+        <p><span>本文标题:</span><a href="/2016/06/20/iOSBox/">iOS 开发中遇到的问题及解决方法。</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Gap 的个人博客">Gap</a></p>
-        <p><span>发布时间:</span>2016年05月06日 - 20时49分</p>
+        <p><span>发布时间:</span>2016年06月20日 - 23时10分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/06/tweak/" title="iOSRe(tweak)">https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/　　作者: Gap" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/20/iOSBox/" title="iOS 开发中遇到的问题及解决方法。">https://github.com/Qgap/qgap.github-io/2016/06/20/iOSBox/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/Qgap/qgap.github-io/2016/06/20/iOSBox/　　作者: Gap" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -295,18 +279,9 @@ make install
 
 <nav id="article-nav">
   
-    <a href="/2016/06/14/随谈/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          随谈
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/05/iOSRe/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOSRe (二) 配置THEOS环境</div>
+    <a href="/2016/06/14/随谈/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">随谈</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -317,7 +292,7 @@ make install
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Making-Project"><span class="toc-number">1.</span> <span class="toc-text">Making Project</span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -365,7 +340,7 @@ make install
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/06/tweak/" data-title="iOSRe(tweak)" data-url="https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/"></div>
+    <div class="ds-thread" data-thread-key="2016/06/20/iOSBox/" data-title="iOS 开发中遇到的问题及解决方法。" data-url="https://github.com/Qgap/qgap.github-io/2016/06/20/iOSBox/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -388,13 +363,11 @@ make install
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/06/14/随谈/" title="上一篇: 随谈">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/05/iOSRe/" title="下一篇: iOSRe (二) 配置THEOS环境">
+            <a href="/2016/06/14/随谈/" title="下一篇: 随谈">
                 <i class="fa fa-angle-right"></i>
             </a>
         
