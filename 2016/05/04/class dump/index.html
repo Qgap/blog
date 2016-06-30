@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>砸壳与 class dump | Gap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##砸壳    
+&amp;gt;以前，总觉得，用的少的，没必要记录，因为你不知道下次用是什么时候。后来，才明白，越是用的少的，才有记录的必要，因为用的少，也很容易忘记，记录的也少，查起来也不是那么简单。这些步骤网上都有，而重写的目的是因为真实执行起来还是有些不同。所以还是予以记录，方便下次查阅这遍砸壳文章记录的还挺详细。不过最后步骤有点繁琐。这里推荐比较简单的做法吧。    
+1.dumpdecrypt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="砸壳与 class dump">
+<meta property="og:url" content="https://github.com/Qgap/qgap.github-io/2016/05/04/class dump/index.html">
+<meta property="og:site_name" content="Gap">
+<meta property="og:description" content="##砸壳    
+&amp;gt;以前，总觉得，用的少的，没必要记录，因为你不知道下次用是什么时候。后来，才明白，越是用的少的，才有记录的必要，因为用的少，也很容易忘记，记录的也少，查起来也不是那么简单。这些步骤网上都有，而重写的目的是因为真实执行起来还是有些不同。所以还是予以记录，方便下次查阅这遍砸壳文章记录的还挺详细。不过最后步骤有点繁琐。这里推荐比较简单的做法吧。    
+1.dumpdecrypt">
+<meta property="og:image" content="https://github.com/Qgap/qgap.github-io/images/ifunbox.png">
+<meta property="og:image" content="https://github.com/Qgap/qgap.github-io/images/wechatfile.png">
+<meta property="og:image" content="https://github.com/Qgap/qgap.github-io/images/classdump.png">
+<meta property="og:updated_time" content="2016-06-17T07:03:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="砸壳与 class dump">
+<meta name="twitter:description" content="##砸壳    
+&amp;gt;以前，总觉得，用的少的，没必要记录，因为你不知道下次用是什么时候。后来，才明白，越是用的少的，才有记录的必要，因为用的少，也很容易忘记，记录的也少，查起来也不是那么简单。这些步骤网上都有，而重写的目的是因为真实执行起来还是有些不同。所以还是予以记录，方便下次查阅这遍砸壳文章记录的还挺详细。不过最后步骤有点繁琐。这里推荐比较简单的做法吧。    
+1.dumpdecrypt">
+<meta name="twitter:image" content="https://github.com/Qgap/qgap.github-io/images/ifunbox.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Gap" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Gap</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/Qgap/qgap.github-io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-class dump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/04/class dump/" class="article-date">
+  <time datetime="2016-05-04T08:55:53.000Z" itemprop="datePublished">2016-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      砸壳与 class dump
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##砸壳    </p>
+<p>&gt;<br>以前，总觉得，用的少的，没必要记录，因为你不知道下次用是什么时候。<br>后来，才明白，越是用的少的，才有记录的必要，因为用的少，也很容易忘记，记录的也少，查起来也不是那么简单。<br>这些步骤网上都有，而重写的目的是因为真实执行起来还是有些不同。所以还是予以记录，方便下次查阅这遍<a href="http://www.swiftyper.com/2016/05/02/iOS-reverse-step-by-step-part-1-class-dump/" target="_blank" rel="external">砸壳</a>文章记录的还挺详细。不过最后步骤有点繁琐。这里推荐比较简单的做法吧。    </p>
+<p>1.dumpdecrypted<br><a href="https://github.com/stefanesser/dumpdecrypted/archive/master.zip">源代码下载地址</a> , 解压后,          </p>
+<pre><code>$ cd /Users/gap/iOSRe/dumpdecrypted-master/
+$ make
+</code></pre><p>或者从github 上clone     </p>
+<pre><code>$git clone git://github.com/stefanesser/dumpdecrypted/ 
+$cd dumpdecrypted/ 
+$make
+</code></pre><p> 上面的make命令执行完毕后，会在当前目录下生成一个<code>dumpdecrypted.dylib</code>文件，这就是我们等下砸壳所要用到的榔头。此文件生成一次即可，以后可以重复使用，下次砸壳时无须再重新编译。</p>
+<hr>
+<p>上面准备了砸壳需要的工具，下面就是砸壳步骤了。在这，极力推荐使用<code>iFunBox</code>这个工具， 因为可视化的操作和基于USB 的操作，会很方便快捷。这里的步骤也是基于<code>iFunBox</code>搭配操作的，全代码的操作可以参考这个<a href="http://bbs.iosre.com/t/dumpdecrypted-app/22" target="_blank" rel="external">iOSRe</a>和上面提到的<a href="http://www.swiftyper.com/2016/05/02/iOS-reverse-step-by-step-part-1-class-dump/" target="_blank" rel="external">砸壳</a>     </p>
+<hr>
+<p>1.如果你手机越狱成功，打开ifunbox，连接手机，会显示你的手机系统和手机上的应用程序。<br><img src="/images/ifunbox.png" alt="">        </p>
+<p>2.双击右侧出现的，你想砸壳的app ，会有Documents 文件夹，将mac 端上的<code>dumpdecrypted.dylib</code> 拖拽到Documents文件夹中。<img src="/images/wechatfile.png" alt="wechat"></p>
+<p>3.打开terminal，通过ssh 连上你的手机     </p>
+<pre><code>   ＃ssh root@yourIP 
+   ~ root# ps -e   (保持你需要砸壳的应用程序在前台)  
+   10679 ??         0:14.58 /var/mobile/Containers/Bundle/Application/F6DB6407-4C2D-4C04-B5C2-9942DCC8870B/WeChat.app/WeChat
+10681 ??         0:00.43 /usr/libexec/misagent
+10687 ??         0:00.21 /usr/libexec/online-auth-agent
+10696 ??         0:11.96 /var/mobile/Containers/Bundle/Application/    2B97BE49-B373-4906-A8EC-B4BD2DF7683F/Twitter.app/Twitter
+10731 ??         0:00.44 /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd
+10734 ??         0:00.37 sshd: root@ttys000 
+10738 ??         0:00.20 /System/Library/Frameworks/UIKit.framework/Support/pasteboardd
+</code></pre><p>  <code>/var/mobile/Containers/Bundle/Application/</code>字样的结果就是TargetApp可执行文件的全路径。如果像上图有多个，<code>/var/mobile/Containers/Bundle/Application/</code>,找准哪个是你需要砸壳的<code>app</code>就行，这里以<code>wechat</code>为例。</p>
+<pre><code>~ root# cd /var/mobile/Containers/Data/Application/19ECCADD-7DAE-4647-AD3A-A706056E54FD/Documents/  (图二上的路径)
+Documents#DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib  /var/mobile/Containers/Bundle/Application/F6DB6407-4C2D-4C04-B5C2-9942DCC8870B/WeChat.app/WeChat (上面ps-e 命令找出来的路径)   
+</code></pre><p>   最后会生成<code>.decrypted</code> 为扩展名的文件–(在图二中的<code>Documents</code>文件夹中)。把它拷贝到电脑上，使用Hopper Disassembler 软件打开，打开方式是tool 上的file ，然后通过read executable..导入，</p>
+<pre><code>cltr +d 退出cycript 模式。
+</code></pre><p>##class dump</p>
+<p>  下载class dump <a href="http://stevenygard.com/projects/class-dump/" target="_blank" rel="external">http://stevenygard.com/projects/class-dump/</a>。<br>  然后将<code>class-dump</code> 复制到<code>/usr/bin</code>下，然而，这会报错<code>cp: /usr/bin/class-dump: Permission denied</code> ，可以参考<a href="http://bbs.iosre.com/t/10-11-usr-bin-class-dump/1936" target="_blank" rel="external">iosre论坛的这篇文章解决</a>。<br>  安装好后，键入<code>class-dump</code>,会显示版本号和参数<img src="/images/classdump.png" alt="classdump"><br>    使用方法  </p>
+<pre><code>class-dump -S -s -H path/xxx.decrypted -o path/Headers/ 
+</code></pre><hr>
+<p>对逆向感兴趣的，建议多多翻阅<a href="https://www.amazon.cn/iOS%E5%BA%94%E7%94%A8%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-%E6%B2%99%E6%A2%93%E7%A4%BE/dp/B00VFDVY7E/ref=sr_1_1?ie=UTF8&amp;qid=1462178712&amp;sr=8-1&amp;keywords=ios+%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B" target="_blank" rel="external">iOS逆向工程</a>，入门的不二选择。    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/05/04/class dump/" data-id="ciq24m4cd0005n71y2f286mvb" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/05/iOSRe/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          iOSRe (二) 配置THEOS环境
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/13/bookList/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">2016 book list</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/20/iOSBox/">iOS 开发中遇到的问题及解决方法。</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/14/随谈/">随谈</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/tweak/">iOSRe(tweak)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/05/iOSRe/">iOSRe (二) 配置THEOS环境</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/04/class dump/">砸壳与 class dump</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Gap<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

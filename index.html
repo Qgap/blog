@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Person website">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gap">
+<meta property="og:url" content="https://github.com/Qgap/qgap.github-io/index.html">
+<meta property="og:site_name" content="Gap">
+<meta property="og:description" content="Person website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gap">
+<meta name="twitter:description" content="Person website">
+  
+    <link rel="alternate" href="/atom.xml" title="Gap" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Gap</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/Qgap/qgap.github-io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-iOSBox" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/iOSBox/" class="article-date">
+  <time datetime="2016-06-20T15:10:17.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/iOSBox/">iOS 开发中遇到的问题及解决方法。</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>上周看完《程序员45个习惯》，中间有那么一条，是记录开发日志，所以本文主要是记录总结 自己在iOS 开发中遇到的问题和解决方法。方便日后查看</p>
+</blockquote>
+<hr>
+<p> <code>NSString</code><br> 去掉 <code>NSString</code>中的空格和换行，<code>stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]</code> 但是这只能去掉头部和尾部的空格和换行符，中间的没法去掉。   </p>
+<p>如果去掉两端的空格和换行后，需要将中间的去掉，结合下面的方法。</p>
+<pre><code>NSArray *components = [string  componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+string = [components componentsJoinedByString:@&quot;&quot;];
+</code></pre><p> 参考<a href="http://nshipster.cn/nscharacterset/" target="_blank" rel="external">nshipster NSCharacter​Set</a></p>
+<p>  替换<code>NSString</code> 中指定的字符，    </p>
+<pre><code>[string stringByReplacingOccurrencesOfString:@&quot;-&quot; withString:@&quot;&quot;];
+</code></pre><hr>
+<p> <code>NSNotificationCenter</code></p>
+<p> <code>NSNotificationCenter</code>  使用顺序，<code>addObserver</code>在先， 而后<code>postNotificationName</code> ；<br> 可能crash 的原因，   </p>
+<ol>
+<li>使用后没有<code>removeObserver</code>，在升级<code>xcode 7.3</code>后遇到过，从而导致crash；   </li>
+<li><code>post</code>操作的线程和<code>addObserver</code>的线程不一致而引发的。<a href="http://southpeak.github.io/blog/2015/03/14/nsnotificationyu-duo-xian-cheng/" target="_blank" rel="external">南峰子博客 Notification与多线程</a>；  </li>
+</ol>
+<pre><code>dispatch_async(dispatch_get_main_queue(), ^{
+      [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidCompleteNotification object:task userInfo:userInfo];
+  });
+</code></pre><hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/06/20/iOSBox/" data-id="ciq24m4c60002n71ygp8ehk18" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-随谈" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/14/随谈/" class="article-date">
+  <time datetime="2016-06-14T08:34:11.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/14/随谈/">随谈</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2016-06-14<br>此文用来记录自己的感想。<br>今年人都变了很多，很少在朋友圈和QQ空间更新状态。更多的想法都是被自我消化然后淡忘。<br>现在静下来想想，为什么不记录下来呢？以前有什么都喜欢写日志，现在都少了，不是感想少了，<br>而是太在意别人的说法了。似乎这种想法很傻，是啊，那就改。<br>努力做个更好的自己。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/06/14/随谈/" data-id="ciq24m4cc0004n71yw9qug7ax" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-tweak" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/tweak/" class="article-date">
+  <time datetime="2016-05-06T12:49:58.000Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/06/tweak/">iOSRe(tweak)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建tweak 文件<br>虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  </p>
+<pre><code>1.$THEOS/bin/nic.pl          
+
+Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
+NIC 2.0 - New Instance Creator
+ ------------------------------
+[1.] iphone/activator_event
+[2.] iphone/application_modern
+[3.] iphone/cydget
+[4.] iphone/flipswitch_switch
+[5.] iphone/framework
+[6.] iphone/ios7_notification_center_widget
+[7.] iphone/library
+[8.] iphone/notification_center_widget
+[9.] iphone/preference_bundle_modern
+[10.] iphone/tool
+[11.] iphone/tweak
+[12.] iphone/xpc_service
+Choose a Template (required): 11
+Project Name (required): gap
+Package Name [com.yourcompany.gap]: com.gapyear.gap
+Author/Maintainer Name [Mac]: Mac
+[iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]: com.apple.springboard
+[iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]: SpringBoard
+Instantiating iphone/tweak in gap/...
+Done.
+</code></pre><p> 这时，会在你执行<code>$THEOS/bin/nic.pl</code> 命令下的目录中生成一个gap 的文件夹，文件中包括<code>control</code>,<br> <code>gap.plist</code>(如果是App，则为app 的<code>bundle id</code>,即第一步输入的<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,这里，需要在第一行添加<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,重头戏，这里写你需要<code>%hook</code>的方法。</p>
+<h2 id="Making-Project"><a href="#Making-Project" class="headerlink" title="Making Project"></a>Making Project</h2><pre><code>make package
+make install
+</code></pre><p>改完配置， 编写完代码。打开terminal，切换到<code>gap</code> 文件夹，执行<code>make package</code>,如果一切 正常，会生成一个<code>debs</code>的文件夹，里面有个<code>.deb</code>的文件（然而，更多情况是有错误。例如，有时可能报告<code>include $(THEOS)/makefiles/common.mk</code>这句， 找不到<code>common.mk</code>文件，这里可以将<code>$(THEOS)</code>换成<code>/opt/theos</code>）。<br>成功编译生成<code>deb</code> 文件后，执行<code>make install</code>，这里会要求输入iPhone ssh password，然后会重启，(重启是因为在    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &#39;-&#39; for none) [SpringBoard]</code>这步键入了一个<code>SpringBoard</code>,选择iphone 安装tweak 后的操作)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/" data-id="ciq24m4c90003n71yu0rzrshn" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-iOSRe" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/05/iOSRe/" class="article-date">
+  <time datetime="2016-05-05T06:37:26.000Z" itemprop="datePublished">2016-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/05/iOSRe/">iOSRe (二) 配置THEOS环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基本配置</p>
+<p>#####1.指定THEOS 的安装路径，<br>      export THEOS=/opt/theos   </p>
+<p>#####2.从Github 上下载Theos。<br>      Gapyear:~ gap$ sudo git clone –recursive git://github.com/DHowett/theos.git $THEOS</p>
+<p>#####3.配置ldid，从 <a href="http://joedj.net/ldid" target="_blank" rel="external">http://joedj.net/ldid</a> 下载ldid , 然后移至“/opt/theos/bin” 下，然后以下命令赋予可执行权限：   </p>
+<pre><code>- Gapyear:~ gap$ sudo mv Downloads/ldid /opt/theos/bin/   
+- Gapyear:~ gap$ sudo chmod 777 /opt/theos/bin/ldid 
+</code></pre><p>#####4.配置CydiaSubstrate</p>
+<ul>
+<li>最简单的方法，将越狱后的手机，连上Mac ，然后使用打开iFunBox,将 “文件系统下的 <code>/Library/Frameworks/CydiaSubstrate.framework/CydiaSubstrate</code>“ 拷贝到OSX 中，</li>
+<li>并且将其重命名为<code>libsubstrate.dylib</code> 后放到”<code>/opt/theos/lib/</code>“ 中。     </li>
+</ul>
+<p>#####5. 配置<code>dpkg－deb</code> ，这是我花最长时间配置的一步。先从 <a href="https://github.com/DHowett/dm.pl">github download dm.pl 文件</a> ,然后将这里面的 <code>dm.pl</code> 重新命名为 <code>dpkg-deb</code> ， 这里，一定要记住，OS X 中默认的隐藏了文件的扩展属性，这里一定要注意扩展属性，是文件名全部替换，包括扩展后缀。  同样，将<code>dpkg-deb</code> 放到<code>/opt/theos/bin</code> 目录下   </p>
+<pre><code>- Gapyear:~ gap$ sudo mv Downloads/dm.pl-master/dpkg-deb /opt/theos/bin/
+
+- Gapyear:~ gap$ sudo chmod 777 /opt/theos/bin/dpkg-deb 
+</code></pre><hr>
+<p>以上是配置<code>THEOS</code> 过程，以下是参考资料</p>
+<p><a href="http://iphonedevwiki.net/index.php/Theos/Getting_Started#Setting_Up_Dependencies" target="_blank" rel="external">Theos/Getting_Started#Setting_Up_Dependencies</a></p>
+<p><a href="http://bbs.iosre.com/t/dpkg-deb/3321" target="_blank" rel="external">dpkg-bed Q</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/05/05/iOSRe/" data-id="ciq24m4c30001n71ynp1ihx38" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-class dump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/04/class dump/" class="article-date">
+  <time datetime="2016-05-04T08:55:53.000Z" itemprop="datePublished">2016-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/04/class dump/">砸壳与 class dump</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##砸壳    </p>
+<p>&gt;<br>以前，总觉得，用的少的，没必要记录，因为你不知道下次用是什么时候。<br>后来，才明白，越是用的少的，才有记录的必要，因为用的少，也很容易忘记，记录的也少，查起来也不是那么简单。<br>这些步骤网上都有，而重写的目的是因为真实执行起来还是有些不同。所以还是予以记录，方便下次查阅这遍<a href="http://www.swiftyper.com/2016/05/02/iOS-reverse-step-by-step-part-1-class-dump/" target="_blank" rel="external">砸壳</a>文章记录的还挺详细。不过最后步骤有点繁琐。这里推荐比较简单的做法吧。    </p>
+<p>1.dumpdecrypted<br><a href="https://github.com/stefanesser/dumpdecrypted/archive/master.zip">源代码下载地址</a> , 解压后,          </p>
+<pre><code>$ cd /Users/gap/iOSRe/dumpdecrypted-master/
+$ make
+</code></pre><p>或者从github 上clone     </p>
+<pre><code>$git clone git://github.com/stefanesser/dumpdecrypted/ 
+$cd dumpdecrypted/ 
+$make
+</code></pre><p> 上面的make命令执行完毕后，会在当前目录下生成一个<code>dumpdecrypted.dylib</code>文件，这就是我们等下砸壳所要用到的榔头。此文件生成一次即可，以后可以重复使用，下次砸壳时无须再重新编译。</p>
+<hr>
+<p>上面准备了砸壳需要的工具，下面就是砸壳步骤了。在这，极力推荐使用<code>iFunBox</code>这个工具， 因为可视化的操作和基于USB 的操作，会很方便快捷。这里的步骤也是基于<code>iFunBox</code>搭配操作的，全代码的操作可以参考这个<a href="http://bbs.iosre.com/t/dumpdecrypted-app/22" target="_blank" rel="external">iOSRe</a>和上面提到的<a href="http://www.swiftyper.com/2016/05/02/iOS-reverse-step-by-step-part-1-class-dump/" target="_blank" rel="external">砸壳</a>     </p>
+<hr>
+<p>1.如果你手机越狱成功，打开ifunbox，连接手机，会显示你的手机系统和手机上的应用程序。<br><img src="/images/ifunbox.png" alt="">        </p>
+<p>2.双击右侧出现的，你想砸壳的app ，会有Documents 文件夹，将mac 端上的<code>dumpdecrypted.dylib</code> 拖拽到Documents文件夹中。<img src="/images/wechatfile.png" alt="wechat"></p>
+<p>3.打开terminal，通过ssh 连上你的手机     </p>
+<pre><code>   ＃ssh root@yourIP 
+   ~ root# ps -e   (保持你需要砸壳的应用程序在前台)  
+   10679 ??         0:14.58 /var/mobile/Containers/Bundle/Application/F6DB6407-4C2D-4C04-B5C2-9942DCC8870B/WeChat.app/WeChat
+10681 ??         0:00.43 /usr/libexec/misagent
+10687 ??         0:00.21 /usr/libexec/online-auth-agent
+10696 ??         0:11.96 /var/mobile/Containers/Bundle/Application/    2B97BE49-B373-4906-A8EC-B4BD2DF7683F/Twitter.app/Twitter
+10731 ??         0:00.44 /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd
+10734 ??         0:00.37 sshd: root@ttys000 
+10738 ??         0:00.20 /System/Library/Frameworks/UIKit.framework/Support/pasteboardd
+</code></pre><p>  <code>/var/mobile/Containers/Bundle/Application/</code>字样的结果就是TargetApp可执行文件的全路径。如果像上图有多个，<code>/var/mobile/Containers/Bundle/Application/</code>,找准哪个是你需要砸壳的<code>app</code>就行，这里以<code>wechat</code>为例。</p>
+<pre><code>~ root# cd /var/mobile/Containers/Data/Application/19ECCADD-7DAE-4647-AD3A-A706056E54FD/Documents/  (图二上的路径)
+Documents#DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib  /var/mobile/Containers/Bundle/Application/F6DB6407-4C2D-4C04-B5C2-9942DCC8870B/WeChat.app/WeChat (上面ps-e 命令找出来的路径)   
+</code></pre><p>   最后会生成<code>.decrypted</code> 为扩展名的文件–(在图二中的<code>Documents</code>文件夹中)。把它拷贝到电脑上，使用Hopper Disassembler 软件打开，打开方式是tool 上的file ，然后通过read executable..导入，</p>
+<pre><code>cltr +d 退出cycript 模式。
+</code></pre><p>##class dump</p>
+<p>  下载class dump <a href="http://stevenygard.com/projects/class-dump/" target="_blank" rel="external">http://stevenygard.com/projects/class-dump/</a>。<br>  然后将<code>class-dump</code> 复制到<code>/usr/bin</code>下，然而，这会报错<code>cp: /usr/bin/class-dump: Permission denied</code> ，可以参考<a href="http://bbs.iosre.com/t/10-11-usr-bin-class-dump/1936" target="_blank" rel="external">iosre论坛的这篇文章解决</a>。<br>  安装好后，键入<code>class-dump</code>,会显示版本号和参数<img src="/images/classdump.png" alt="classdump"><br>    使用方法  </p>
+<pre><code>class-dump -S -s -H path/xxx.decrypted -o path/Headers/ 
+</code></pre><hr>
+<p>对逆向感兴趣的，建议多多翻阅<a href="https://www.amazon.cn/iOS%E5%BA%94%E7%94%A8%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-%E6%B2%99%E6%A2%93%E7%A4%BE/dp/B00VFDVY7E/ref=sr_1_1?ie=UTF8&amp;qid=1462178712&amp;sr=8-1&amp;keywords=ios+%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B" target="_blank" rel="external">iOS逆向工程</a>，入门的不二选择。    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/05/04/class dump/" data-id="ciq24m4cd0005n71y2f286mvb" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bookList" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/13/bookList/" class="article-date">
+  <time datetime="2016-04-13T12:07:37.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/bookList/">2016 book list</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录看过的书，定期回顾<br>《创业维艰》<br>《The one thing》－《最重要的事只有一件》<br>《格鲁夫给经理人的第一课》<br>《高效程序员的45个习惯：敏捷开发修炼之道》<br>《人人都是产品经理》 （苏杰）<br>《20岁，光阴不再来》<br>《少有人走的路三》<br>《发现你的优势2.0》</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/04/13/bookList/" data-id="ciq24m4bx0000n71ycrwzchfr" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/20/iOSBox/">iOS 开发中遇到的问题及解决方法。</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/14/随谈/">随谈</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/tweak/">iOSRe(tweak)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/05/iOSRe/">iOSRe (二) 配置THEOS环境</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/04/class dump/">砸壳与 class dump</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Gap<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

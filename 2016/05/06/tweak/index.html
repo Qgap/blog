@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOSRe(tweak) | Gap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
+1.$THEOS/bin/nic.pl          
+
+Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
+NIC 2.0 - New Instance Creator
+ ------------------------------
+[1.] iphone/activ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOSRe(tweak)">
+<meta property="og:url" content="https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/index.html">
+<meta property="og:site_name" content="Gap">
+<meta property="og:description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
+1.$THEOS/bin/nic.pl          
+
+Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
+NIC 2.0 - New Instance Creator
+ ------------------------------
+[1.] iphone/activ">
+<meta property="og:updated_time" content="2016-06-13T07:55:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOSRe(tweak)">
+<meta name="twitter:description" content="创建tweak 文件虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  
+1.$THEOS/bin/nic.pl          
+
+Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
+NIC 2.0 - New Instance Creator
+ ------------------------------
+[1.] iphone/activ">
+  
+    <link rel="alternate" href="/atom.xml" title="Gap" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Gap</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/Qgap/qgap.github-io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tweak" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/06/tweak/" class="article-date">
+  <time datetime="2016-05-06T12:49:58.000Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOSRe(tweak)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建tweak 文件<br>虽然这个步骤已经被我实践过很多遍，但还是不免会忘记，毕竟好记性不如烂笔头。  </p>
+<pre><code>1.$THEOS/bin/nic.pl          
+
+Mac-mini:~ mac$ /opt/theos/bin/nic.pl 
+NIC 2.0 - New Instance Creator
+ ------------------------------
+[1.] iphone/activator_event
+[2.] iphone/application_modern
+[3.] iphone/cydget
+[4.] iphone/flipswitch_switch
+[5.] iphone/framework
+[6.] iphone/ios7_notification_center_widget
+[7.] iphone/library
+[8.] iphone/notification_center_widget
+[9.] iphone/preference_bundle_modern
+[10.] iphone/tool
+[11.] iphone/tweak
+[12.] iphone/xpc_service
+Choose a Template (required): 11
+Project Name (required): gap
+Package Name [com.yourcompany.gap]: com.gapyear.gap
+Author/Maintainer Name [Mac]: Mac
+[iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]: com.apple.springboard
+[iphone/tweak] List of applications to terminate upon installation (space-separated, &apos;-&apos; for none) [SpringBoard]: SpringBoard
+Instantiating iphone/tweak in gap/...
+Done.
+</code></pre><p> 这时，会在你执行<code>$THEOS/bin/nic.pl</code> 命令下的目录中生成一个gap 的文件夹，文件中包括<code>control</code>,<br> <code>gap.plist</code>(如果是App，则为app 的<code>bundle id</code>,即第一步输入的<code>MobileSubstrate Bundle filter [com.apple.springboard]</code>),<br> <code>Makefile</code>,这里，需要在第一行添加<code>THEOS_DEVICE_IP = Your IP Address.</code><br> <code>Tweak.xm</code> ,重头戏，这里写你需要<code>%hook</code>的方法。</p>
+<h2 id="Making-Project"><a href="#Making-Project" class="headerlink" title="Making Project"></a>Making Project</h2><pre><code>make package
+make install
+</code></pre><p>改完配置， 编写完代码。打开terminal，切换到<code>gap</code> 文件夹，执行<code>make package</code>,如果一切 正常，会生成一个<code>debs</code>的文件夹，里面有个<code>.deb</code>的文件（然而，更多情况是有错误。例如，有时可能报告<code>include $(THEOS)/makefiles/common.mk</code>这句， 找不到<code>common.mk</code>文件，这里可以将<code>$(THEOS)</code>换成<code>/opt/theos</code>）。<br>成功编译生成<code>deb</code> 文件后，执行<code>make install</code>，这里会要求输入iPhone ssh password，然后会重启，(重启是因为在    <code>[iphone/tweak] List of applications to terminate upon installation (space-separated, &#39;-&#39; for none) [SpringBoard]</code>这步键入了一个<code>SpringBoard</code>,选择iphone 安装tweak 后的操作)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/Qgap/qgap.github-io/2016/05/06/tweak/" data-id="ciq24m4c90003n71yu0rzrshn" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/14/随谈/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          随谈
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/05/iOSRe/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">iOSRe (二) 配置THEOS环境</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/20/iOSBox/">iOS 开发中遇到的问题及解决方法。</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/14/随谈/">随谈</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/06/tweak/">iOSRe(tweak)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/05/iOSRe/">iOSRe (二) 配置THEOS环境</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/04/class dump/">砸壳与 class dump</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Gap<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
